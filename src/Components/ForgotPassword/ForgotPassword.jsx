@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function ForgotPassword() {
   const [loading, setLoading] = useState(false);
@@ -39,6 +40,11 @@ export default function ForgotPassword() {
   });
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Forget Password</title>
+      </Helmet>
+
       <div className="h-100 d-flex flex-column justify-content-center align-items-center">
         {
           error ? (<div className="alert alert-danger rounded-1 mb-5">{error}</div>) : ""

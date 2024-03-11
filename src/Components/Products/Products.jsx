@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import Product from "../Product/Product";
 import { PuffLoader } from "react-spinners";
+import { Helmet } from "react-helmet";
 
 export default function Products() {
   const [value, setValue] = useState("");
@@ -27,6 +28,11 @@ export default function Products() {
   }
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Products</title>
+      </Helmet>
+
       <div className="container mx-auto pt-5">
         <input
           type="search"

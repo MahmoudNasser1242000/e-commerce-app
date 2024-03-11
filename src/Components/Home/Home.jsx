@@ -11,6 +11,7 @@ import axios from 'axios'
 import Product from '../Product/Product'
 import { PuffLoader } from 'react-spinners'
 import CategoriesSlider from '../CategoriesSlider/CategoriesSlider'
+import { Helmet } from 'react-helmet'
 
 export default function Home() {
   const getProducts = async () => {
@@ -22,6 +23,11 @@ export default function Home() {
   const { data, isLoading, isError } = useQuery("all-products", getProducts);
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home</title>
+      </Helmet>
+
       <div className='container mx-auto'>
         <div className='my-4 pt-4 row g-0'>
           <div className='col-md-8 col-6'>

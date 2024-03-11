@@ -7,6 +7,7 @@ import { PuffLoader } from "react-spinners";
 import { useCart } from "../Context/CartContext";
 import toast from "react-hot-toast";
 import { useWishList } from "../Context/WishListContext";
+import { Helmet } from "react-helmet";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -89,6 +90,11 @@ export default function ProductDetails() {
     </div>
   ) : product ? (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Product Details</title>
+      </Helmet>
+
       <div className="d-flex py-5 justify-content-center align-items-center">
         <div className="container mx-auto row d-flex align-items-center">
           <div className="col-md-4 col-sm-6 mb-5 mb-sm-0">
@@ -120,9 +126,9 @@ export default function ProductDetails() {
                   >
                     <i
                       className={`fa-solid fa-heart fs-3 ${wishList?.data?.find((prod) => prod._id === id) !==
-                          undefined
-                          ? "text-danger"
-                          : "text-dark"
+                        undefined
+                        ? "text-danger"
+                        : "text-dark"
                         }`}
                     ></i>
                   </button>

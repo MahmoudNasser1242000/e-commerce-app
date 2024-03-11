@@ -23,7 +23,7 @@ export default function Navbar() {
   // }, [cart])
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary position-fixed start-0 end-0 top-0">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary position-fixed z-3 start-0 end-0 top-0">
         <div className="container">
           <Link to={""} className="navbar-brand">
             <img src={logo} alt="logo image" />

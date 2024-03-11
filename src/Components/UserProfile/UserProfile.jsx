@@ -6,6 +6,7 @@ import axios from 'axios'
 import { useToken } from '../Context/TokenContext'
 import { jwtDecode } from 'jwt-decode'
 import { PuffLoader } from 'react-spinners'
+import { Helmet } from 'react-helmet'
 
 export default function UserProfile() {
   const { user } = useToken();
@@ -29,6 +30,11 @@ export default function UserProfile() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>User Profile</title>
+      </Helmet>
+
       {/* {
         isLoading ? (
           <div className="w-100 h-100 d-flex justify-content-center align-items-center">

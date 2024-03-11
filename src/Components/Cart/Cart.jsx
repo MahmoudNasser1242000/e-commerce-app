@@ -4,6 +4,7 @@ import { useCart } from "../Context/CartContext";
 import CartItem from "../CartItem/CartItem";
 import { PuffLoader } from "react-spinners";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function Cart() {
   const { getCartItems, cart } = useCart();
@@ -19,6 +20,11 @@ export default function Cart() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Cart</title>
+      </Helmet>
+
       <div className="container mx-auto my-4 p-3 bg-main-light rounded-1">
         <div className="d-flex justify-content-between align-items-center px-2 pt-2 mb-5">
           <h4>

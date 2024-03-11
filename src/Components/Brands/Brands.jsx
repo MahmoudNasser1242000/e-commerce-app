@@ -4,6 +4,7 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { PuffLoader } from "react-spinners";
 import CategoryOrBrand from "../CategoryOrBrand/CategoryOrBrand";
+import { Helmet } from "react-helmet";
 
 export default function Brands() {
   const [value, setValue] = useState("");
@@ -28,6 +29,11 @@ export default function Brands() {
   };
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Brands</title>
+      </Helmet>
+
       <div className="container mx-auto pt-5">
         <input
           type="search"

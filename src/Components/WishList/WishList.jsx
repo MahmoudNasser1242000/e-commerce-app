@@ -3,6 +3,7 @@ import styles from "./WishList.module.css";
 import { useWishList } from "../Context/WishListContext";
 import { PuffLoader } from "react-spinners";
 import WishListItem from "../WishListItem/WishListItem";
+import { Helmet } from "react-helmet";
 
 export default function WishList() {
   const {getWishListItems, wishList} = useWishList();
@@ -18,6 +19,11 @@ export default function WishList() {
   console.log(wishList);
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Wish List</title>
+      </Helmet>
+
       <div className="container mx-auto my-4 p-3 bg-main-light rounded-1">
         <div className="d-flex justify-content-between align-items-center px-2 pt-2 mb-5">
           <h3>

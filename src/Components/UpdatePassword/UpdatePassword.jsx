@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useToken } from "../Context/TokenContext";
+import { Helmet } from "react-helmet";
 
 export default function UpdatePassword() {
   const [loading, setLoading] = useState(false);
@@ -44,6 +45,11 @@ export default function UpdatePassword() {
   });
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Update Password</title>
+      </Helmet>
+
       <div className="h-100 d-flex flex-column justify-content-center align-items-center">
         {error ? (
           <div className="alert alert-danger rounded-1 mb-5">{error}</div>

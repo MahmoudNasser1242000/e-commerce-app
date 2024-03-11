@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useToken } from "../Context/TokenContext";
+import { Helmet } from "react-helmet";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -55,77 +56,84 @@ export default function Register() {
     onSubmit: Login,
   });
   return (
-    <div className="w-100 h-100 d-flex flex-column justify-content-center align-items-center">
-      {errorMessage ? (
-        <div className="alert alert-danger text-center">{errorMessage}</div>
-      ) : (
-        ""
-      )}
-      <h2 className="text-success">Signin Now</h2>
-      <form className={styles.login} onSubmit={formik.handleSubmit}>
-        <div className={styles.input_field}>
-          <label htmlFor="email" className="form-label">
-            Email
-          </label>
-          <input
-            type="email"
-            className={`form-control ${
-              !formik.touched.email
-                ? ""
-                : formik.errors.email
-                ? "is-invalid"
-                : "is-valid"
-            }`}
-            name="email"
-            id="email"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-            placeholder="Enter Your Email"
-          />
-          <div className="invalid-feedback">
-            {formik.touched.email && formik.errors.email
-              ? formik.errors.email
-              : ""}
-          </div>
-        </div>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Login</title>
+      </Helmet>
 
-        <div className={styles.input_field}>
-          <label htmlFor="password" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            className={`form-control ${
-              !formik.touched.password
-                ? ""
-                : formik.errors.password
-                ? "is-invalid"
-                : "is-valid"
-            }`}
-            name="password"
-            id="password"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.password}
-            placeholder="Enter Your Password"
-          />
-          <div className="invalid-feedback">
-            {formik.touched.password && formik.errors.password
-              ? formik.errors.password
-              : ""}
+      <div className="w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+        {errorMessage ? (
+          <div className="alert alert-danger text-center">{errorMessage}</div>
+        ) : (
+          ""
+        )}
+        <h2 className="text-success">Signin Now</h2>
+        <form className={styles.login} onSubmit={formik.handleSubmit}>
+          <div className={styles.input_field}>
+            <label htmlFor="email" className="form-label">
+              Email
+            </label>
+            <input
+              type="email"
+              className={`form-control ${
+                !formik.touched.email
+                  ? ""
+                  : formik.errors.email
+                  ? "is-invalid"
+                  : "is-valid"
+              }`}
+              name="email"
+              id="email"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+              placeholder="Enter Your Email"
+            />
+            <div className="invalid-feedback">
+              {formik.touched.email && formik.errors.email
+                ? formik.errors.email
+                : ""}
+            </div>
           </div>
-        </div>
-
-        <button
-          type="submit"
-          className="btn btn-success rounded-1 px-3 d-block ms-auto"
-          disabled={!(formik.isValid && formik.dirty)}
-        >
-          {isLoading? <i className="fa fa-spinner fa-spin"></i> : "Signin"}
-        </button>
-      </form>
-      <p className={`text-center mt-4`}>if you forget password <Link to="/forgot-password" className={styles.forget_pass}>Go Here</Link></p>
-    </div>
+      
+          <div className={styles.input_field}>
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              className={`form-control ${
+                !formik.touched.password
+                  ? ""
+                  : formik.errors.password
+                  ? "is-invalid"
+                  : "is-valid"
+              }`}
+              name="password"
+              id="password"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.password}
+              placeholder="Enter Your Password"
+            />
+            <div className="invalid-feedback">
+              {formik.touched.password && formik.errors.password
+                ? formik.errors.password
+                : ""}
+            </div>
+          </div>
+      
+          <button
+            type="submit"
+            className="btn btn-success rounded-1 px-3 d-block ms-auto"
+            disabled={!(formik.isValid && formik.dirty)}
+          >
+            {isLoading? <i className="fa fa-spinner fa-spin"></i> : "Signin"}
+          </button>
+        </form>
+        <p className={`text-center mt-4`}>if you forget password <Link to="/forgot-password" className={styles.forget_pass}>Go Here</Link></p>
+      </div>
+    </>
   );
 }

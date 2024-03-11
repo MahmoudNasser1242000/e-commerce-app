@@ -41,6 +41,7 @@ function App() {
       {path: "forgot-password", element: <ProtectToken> <ForgotPassword/> </ProtectToken>},
       {path: "reset-code", element: <ProtectToken> <ResetCode/> </ProtectToken>},
       {path: "updata-password", element: <ProtectToken> <UpdatePassword/> </ProtectToken>},
+      
       {path: "*", element: <NotFound/>},
     ]}
   ])

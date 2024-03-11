@@ -3,6 +3,7 @@ import styles from "./OnlinePayment.module.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useCart } from "../Context/CartContext";
+import { Helmet } from "react-helmet";
 
 export default function OnlinePayment() {
   const { onlinePayment, setCart } = useCart();
@@ -41,6 +42,11 @@ export default function OnlinePayment() {
   });
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Online Payment</title>
+      </Helmet>
+
       <div className="h-100 d-flex justify-content-center align-items-center">
         <div className="container mx-auto p-4 bg-main-light">
           <h2 className="text-success mb-4">Shipping Address</h2>

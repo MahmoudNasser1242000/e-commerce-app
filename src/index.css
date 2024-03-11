@@ -30,6 +30,7 @@ body{
 a , a:hover{
     color: black;
     text-decoration: none !important;
+    outline: none !important;
 }
 .font-sm
 {
