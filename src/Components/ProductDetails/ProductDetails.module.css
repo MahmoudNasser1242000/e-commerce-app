@@ -1,1 +1,6 @@
-.ProductDetails {}
+.heart {
+    transition: 0.4s;
+}
+.heart:hover {
+    color: #DC3545 !important;
+}

@@ -8,6 +8,7 @@ import { useCart } from "../Context/CartContext";
 import toast from "react-hot-toast";
 import { useWishList } from "../Context/WishListContext";
 import { Helmet } from "react-helmet";
+import styles from "./ProductDetails.module.css"
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -125,7 +126,7 @@ export default function ProductDetails() {
                     onClick={addWishListProduct}
                   >
                     <i
-                      className={`fa-solid fa-heart fs-3 ${wishList?.data?.find((prod) => prod._id === id) !==
+                      className={`fa-solid fa-heart fs-3 ${styles.heart} ${wishList?.data?.find((prod) => prod._id === id) !==
                         undefined
                         ? "text-danger"
                         : "text-dark"
