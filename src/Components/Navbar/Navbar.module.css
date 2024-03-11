@@ -1,0 +1,14 @@
+.social_media_icons i {
+    color: #21313C;
+    margin: 0 5px;
+    transition: all 0.4s;
+}
+.socila_media_icons i:hover {
+    color: var(--main-color);
+}
+
+.social_media_icons i span {
+    font-size: 10px;
+    min-width: 18px !important;
+    min-height: 18px !important;
+}

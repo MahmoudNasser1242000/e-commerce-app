@@ -1,0 +1,11 @@
+.register {
+    width: 50%;
+}
+
+.register label {
+    font-weight: 900;
+}
+
+.input_field {
+    margin-bottom: 20px;
+}

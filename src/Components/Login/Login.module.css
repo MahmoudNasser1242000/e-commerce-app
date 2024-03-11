@@ -1,0 +1,20 @@
+.login {
+    width: 50%;
+}
+
+.login label {
+    font-weight: 900;
+}
+
+.input_field {
+    margin-bottom: 20px;
+}
+
+.forget_pass {
+    text-decoration: underline !important;
+}
+
+.forget_pass:hover {
+    color: var(--main-color);
+    text-decoration: underline !important;
+}

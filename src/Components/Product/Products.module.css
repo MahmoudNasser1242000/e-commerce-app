@@ -1,0 +1,30 @@
+.product {
+    transition: all 0.5s;
+}
+.product * {
+    color: black;
+}
+.product:hover
+{
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(10, 173, 10, 0.502);
+}
+.product button.cart 
+{
+    transition: transform 1s , opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+.product:hover button.cart
+{
+    opacity: 1;
+    transform: translateY(0%);
+
+}
+
+.heart {
+    transition: 0.4s;
+}
+.heart:hover {
+    color: #DC3545 !important;
+}
