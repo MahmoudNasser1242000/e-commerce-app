@@ -32,6 +32,9 @@ a , a:hover{
     text-decoration: none !important;
     outline: none !important;
 }
+a:active {
+    outline: none !important;
+}
 .font-sm
 {
     font-size: 14px;
