@@ -47,7 +47,7 @@ export default function ProductDetails() {
         getWishListItems();
       }
       notify = () =>
-        toast.success("Product added successfully", {
+        toast.success("Product added to cart successfully", {
           icon: "👏",
           duration: 3000,
         });
@@ -55,7 +55,7 @@ export default function ProductDetails() {
       console.log(data, "success");
     } else {
       notify = () =>
-        toast.error("Can't add product!", { icon: "🔥", duration: 3000 });
+        toast.error("Can't add product to cart!", { icon: "🔥", duration: 3000 });
     }
     return notify();
   };
@@ -65,7 +65,7 @@ export default function ProductDetails() {
       const res = await addToWishList(id);
       if (res.status === "success") {
         notify = () =>
-          toast.success("Product added successfully", {
+          toast.success("Product added to wish list successfully", {
             icon: "👏",
             duration: 3000,
           });
@@ -73,11 +73,11 @@ export default function ProductDetails() {
         console.log(res, "success");
       } else {
         notify = () =>
-          toast.error("Can't add product!", { icon: "🔥", duration: 3000 });
+          toast.error("Can't add product to wish list!", { icon: "🔥", duration: 3000 });
       }
     } else {
       notify = () =>
-        toast.success("Product allready exist in cart", {
+        toast.success("Product allready exists in cart", {
           icon: "❌",
           duration: 3000,
         });

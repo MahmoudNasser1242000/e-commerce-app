@@ -48,7 +48,7 @@ export default function Home() {
           <CategoriesSlider />
         </div>
 
-        <div>
+        <div className='mb-5'>
           <h2>Products</h2>
           <div className='row g-3'>
             {

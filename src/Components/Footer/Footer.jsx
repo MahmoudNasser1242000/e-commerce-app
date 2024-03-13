@@ -8,8 +8,7 @@ export default function Footer() {
         Footer
       </footer> */}
 
-      <footer>
-        <div className={`${styles.footer} bg-main-light`}>
+        <footer className={`${styles.footer} bg-main-light`}>
           <div className='py-3'>
             <a href="#"><i className="fa-brands fa-facebook"></i></a>
             <a href="#"><i className="fa-brands fa-instagram"></i></a>
@@ -30,8 +29,7 @@ export default function Footer() {
           <div className={styles.copyright}>
             INFERNO Copyright © 2024 Inferno - All rights reserved || Designed By: <span>Mahmoud Nasser</span>
           </div>
-        </div>
-      </footer>
+        </footer>
     </>
   )
 }
