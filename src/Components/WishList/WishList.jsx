@@ -32,7 +32,7 @@ export default function WishList() {
         </div>
         {
           loading? (
-            <div className="w-100 h-100 d-flex justify-content-center align-items-center">
+            <div className="w-100 d-flex justify-content-center align-items-center">
               <PuffLoader color="#0AAD0A" />
             </div>
           ) : wishList && wishList.data.length !== 0? wishList?.data?.map((prod) => <WishListItem key={prod._id} {...prod}/>) : (<div className="h-100 pb-1">

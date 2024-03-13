@@ -33,7 +33,7 @@ export default function Products() {
         <title>Products</title>
       </Helmet>
 
-      <div className="container mx-auto pt-5">
+      <div className="container mx-auto pt-5 mb-4">
         <input
           type="search"
           name="search-product"

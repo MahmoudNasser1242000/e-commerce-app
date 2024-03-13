@@ -87,7 +87,7 @@ export default function UpdatePassword() {
                 Reset Password
               </label>
               <input
-                type="text"
+                type="password"
                 className={`form-control ${
                   !formik.touched.newPassword
                     ? ""

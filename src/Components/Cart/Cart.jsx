@@ -36,7 +36,7 @@ export default function Cart() {
           <button className="btn btn-success rounded-1" disabled={cart === "" || cart?.data?.products.length === 0? true : false}><Link className="text-white" to={"/online-payment"}>Check Out</Link></button>
         </div>
         {loading ? (
-          <div className="w-100 h-100 d-flex justify-content-center align-items-center">
+          <div className="w-100 d-flex justify-content-center align-items-center">
             <PuffLoader color="#0AAD0A" />
           </div>
         ) : cart === "" || cart?.data?.products.length === 0 ? (

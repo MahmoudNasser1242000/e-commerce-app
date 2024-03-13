@@ -69,7 +69,7 @@ export default function Register() {
         <title>Register</title>
       </Helmet>
 
-      <div className="w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+      <div className="w-100 h-100 mb-5 d-flex flex-column justify-content-center align-items-center">
         {errorMessage ? (
           <div className="alert alert-danger text-center">{errorMessage}</div>
         ) : (

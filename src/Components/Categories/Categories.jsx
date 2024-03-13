@@ -80,7 +80,14 @@ export default function Categories() {
           showImg ? "d-flex" : "d-none"
         }`}
       >
-        <img src={showImg} className="w-50 h-100 object-fit-contain" onClick={(e) => { e.stopPropagation() }} alt="category" />
+        <img
+          src={showImg}
+          className="w-50 h-100 object-fit-contain"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+          alt="category"
+        />
       </div>
     </>
   );

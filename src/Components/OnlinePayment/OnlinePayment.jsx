@@ -47,7 +47,7 @@ export default function OnlinePayment() {
         <title>Online Payment</title>
       </Helmet>
 
-      <div className="h-100 d-flex justify-content-center align-items-center">
+      <div className="h-100 mb-5 d-flex justify-content-center align-items-center">
         <div className="container mx-auto p-4 bg-main-light">
           <h2 className="text-success mb-4">Shipping Address</h2>
           <form className={styles.register} onSubmit={formik.handleSubmit}>
