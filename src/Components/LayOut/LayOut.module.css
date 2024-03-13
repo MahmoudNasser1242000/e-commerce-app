@@ -1,0 +1,12 @@
+.go_up {
+    position: fixed;
+    bottom: 30px ;
+    right: 30px;
+    width: 60px !important;
+    height: 60px !important;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.go_up:hover {
+    transform: scale(1.1);
+}
