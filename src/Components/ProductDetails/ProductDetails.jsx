@@ -8,7 +8,7 @@ import { useCart } from "../Context/CartContext";
 import toast from "react-hot-toast";
 import { useWishList } from "../Context/WishListContext";
 import { Helmet } from "react-helmet";
-import styles from "./ProductDetails.module.css"
+import styles from "./ProductDetails.module.css";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -36,7 +36,8 @@ export default function ProductDetails() {
   }, []);
 
   const { addToCart, getCartItems, cart } = useCart();
-  const { addToWishList, getWishListItems, removeWishListItem, wishList } = useWishList();
+  const { addToWishList, getWishListItems, removeWishListItem, wishList } =
+    useWishList();
   let notify;
 
   const addProduct = async () => {
@@ -55,31 +56,42 @@ export default function ProductDetails() {
       console.log(data, "success");
     } else {
       notify = () =>
-        toast.error("Can't add product to cart!", { icon: "🔥", duration: 3000 });
+        toast.error("Can't add product to cart!", {
+          icon: "🔥",
+          duration: 3000,
+        });
     }
     return notify();
   };
 
   const addWishListProduct = async () => {
-    if (cart?.data?.products.find((prod) => prod.product._id === id) === undefined) {
+    if (
+      cart?.data?.products.find((prod) => prod.product._id === id) === undefined
+    ) {
       const res = await addToWishList(id);
       if (res.status === "success") {
         notify = () =>
           toast.success("Product added to wish list successfully", {
             icon: "👏",
             duration: 3000,
+            style: { maxWidth: "1000px" },
           });
         getWishListItems();
         console.log(res, "success");
       } else {
         notify = () =>
-          toast.error("Can't add product to wish list!", { icon: "🔥", duration: 3000 });
+          toast.error("Can't add product to wish list!", {
+            icon: "🔥",
+            duration: 3000,
+            style: { maxWidth: "1000px" },
+          });
       }
     } else {
       notify = () =>
         toast.success("Product allready exists in cart", {
           icon: "❌",
           duration: 3000,
+          style: { maxWidth: "1000px" },
         });
     }
     return notify();
@@ -126,11 +138,12 @@ export default function ProductDetails() {
                     onClick={addWishListProduct}
                   >
                     <i
-                      className={`fa-solid fa-heart fs-3 ${styles.heart} ${wishList?.data?.find((prod) => prod._id === id) !==
+                      className={`fa-solid fa-heart fs-3 ${styles.heart} ${
+                        wishList?.data?.find((prod) => prod._id === id) !==
                         undefined
-                        ? "text-danger"
-                        : "text-dark"
-                        }`}
+                          ? "text-danger"
+                          : "text-dark"
+                      }`}
                     ></i>
                   </button>
                 </span>

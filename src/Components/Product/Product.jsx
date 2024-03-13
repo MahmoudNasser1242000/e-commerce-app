@@ -34,7 +34,10 @@ export default function Product({
       console.log(data, "success");
     } else {
       notify = () =>
-        toast.error("Can't add product to cart!", { icon: "🔥", duration: 3000 });
+        toast.error("Can't add product to cart!", {
+          icon: "🔥",
+          duration: 3000,
+        });
     }
     return notify();
   };
@@ -49,18 +52,24 @@ export default function Product({
           toast.success("Product added to wish list successfully", {
             icon: "👏",
             duration: 3000,
+            style: { maxWidth: "1000px" },
           });
         getWishListItems();
         console.log(res, "success");
       } else {
         notify = () =>
-          toast.error("Can't add product to wish list!", { icon: "🔥", duration: 3000 });
+          toast.error("Can't add product to wish list!", {
+            icon: "🔥",
+            duration: 3000,
+            style: { maxWidth: "1000px" },
+          });
       }
     } else {
       notify = () =>
         toast.success("Product allready exists in cart", {
           icon: "❌",
           duration: 3000,
+          style: { maxWidth: "1000px" },
         });
     }
     return notify();
@@ -78,10 +87,7 @@ export default function Product({
           />
         </Link>
         <div className="d-flex justify-content-between align-items-center pt-3">
-          <h4
-            className="fs-5 fw-bold text-dark"
-            title={title}
-          >
+          <h4 className="fs-5 fw-bold text-dark" title={title}>
             {title?.length > 16
               ? title.split(" ").slice(0, 2).join(" ")
               : title}
