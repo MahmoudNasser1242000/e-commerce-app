@@ -47,6 +47,7 @@ export default function WishListItem({
         toast.success("Product removed from wish list successfully", {
           icon: "👏",
           duration: 3000,
+          style: {maxWidth: "1000px"}
         });
       getWishListItems();
     } else {
@@ -54,6 +55,7 @@ export default function WishListItem({
         toast.error("Can't remove product from wish list!", {
           icon: "🔥",
           duration: 3000,
+          style: {maxWidth: "1000px"}
         });
     }
     return notify();

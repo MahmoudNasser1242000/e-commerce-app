@@ -51,6 +51,7 @@ export default function ProductDetails() {
         toast.success("Product added to cart successfully", {
           icon: "👏",
           duration: 3000,
+          style: {maxWidth: "1000px"}
         });
       getCartItems();
       console.log(data, "success");
@@ -59,6 +60,7 @@ export default function ProductDetails() {
         toast.error("Can't add product to cart!", {
           icon: "🔥",
           duration: 3000,
+          style: {maxWidth: "1000px"}
         });
     }
     return notify();

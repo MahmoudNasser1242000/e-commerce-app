@@ -41,7 +41,7 @@ export default function UserProfile() {
             <PuffLoader color="#0AAD0A" />
           </div>
         ) : ( */}
-          <section className="bg-white pt-5 mt-5 d-flex justify-content-center align-items-center">
+          <section className="bg-white py-5 h-100 d-flex justify-content-center align-items-center">
             <div className="container">
               <div className="row d-flex justify-content-center align-items-center h-100">
                 <div className="col col-lg-6 mb-4 mb-lg-0">
@@ -65,7 +65,7 @@ export default function UserProfile() {
                               </div>
                               <div className="col-6 mb-3">
                                 <h6>Phone</h6>
-                                <p className="text-muted">123 456 789</p>
+                                <p className="text-muted">01094170994</p>
                               </div>
                             </div>
                             <h6>Projects</h6>

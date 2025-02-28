@@ -17,14 +17,18 @@ export default function Categories() {
   const { data, isLoading } = useQuery("categories", getCategories);
   useEffect(() => {
     if (data !== undefined) {
-      setCategory(data?.data?.data);
+      setCategory(
+        data?.data?.data.filter(
+          (catg) => catg._id !== "6439d58a0049ad0b52b9003f"
+        )
+      );
     }
   }, [data]);
 
   const searchCategory = (value) => {
-    const categories = data?.data?.data.filter((catg) =>
-      catg.name.toLowerCase().includes(value.toLowerCase())
-    );
+    const categories = data?.data?.data
+      .filter((catg) => catg._id !== "6439d58a0049ad0b52b9003f")
+      .filter((catg) => catg.name.toLowerCase().includes(value.toLowerCase()));
     setCategory(categories);
   };
   return (

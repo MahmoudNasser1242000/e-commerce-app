@@ -16,7 +16,7 @@ export default function Register() {
       password: Yup.string()
         .matches(
           /^(?=.*\d{4,})(?=.*[a-zA-z]+)(?=.*[\W_]+).{6,}$/,
-          "invalid password"
+          "password must has at least 4 numbers, 1 charcater and 1 special charcater"
         )
         .required("password required"),
     });
@@ -83,8 +83,8 @@ export default function Register() {
                   ? "is-invalid"
                   : "is-valid"
               }`}
-              name="email"
               id="email"
+              name="email"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}
